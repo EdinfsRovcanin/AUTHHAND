@@ -1,5 +1,5 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import "./App.css";
+import "./App.scss";
 import LoginButton from "./components/LoginButton";
 import LogoutButton from "./components/LogoutButton";
 import { useEffect } from "react";
