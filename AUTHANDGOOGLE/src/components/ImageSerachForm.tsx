@@ -1,6 +1,9 @@
 import { useState, ChangeEvent, FormEvent } from "react";
 
-export const ImageSearchForm = () => {
+interface IImageSearchFormProps {
+  search: (text: string) => void
+}
+export const ImageSearchForm = (props: IImageSearchFormProps) => {
     const [userSearchText, setUserSearchText] = useState("");
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -9,6 +12,7 @@ export const ImageSearchForm = () => {
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    props.search(userSearchText)
 }
 
 return <form onSubmit={handleSubmit}>

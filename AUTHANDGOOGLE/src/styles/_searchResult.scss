@@ -1,0 +1,24 @@
+#images {
+  display: flex;
+  flex-wrap: wrap;
+
+  div {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2rem;
+
+    .img-container {
+        width: 50%;
+
+        img {
+            width: 100%;
+        }
+    }
+&:hover {
+    background-color: rgb(221, 216, 216);
+    cursor: pointer;
+}
+  }
+}

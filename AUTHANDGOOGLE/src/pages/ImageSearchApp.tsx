@@ -1,32 +1,38 @@
-
 import axios from "axios";
 import { ImageSearchForm } from "../components/ImageSerachForm";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { IGoogleResponse } from "../models/IGoogleResponse";
+import { IImage } from "../models/IImage";
+import { SearchResult } from "../components/SearchResults";
+import LogoutButton from "../components/LogoutButton";
 
 export const ImageSearchApp = () => {
-//  const [images, setImages] = useState<IImage[]>()
+  const [images, setImages] = useState<IImage[]>();
+  const searchImages = async (searchText: string) => {
+    const response = await axios.get<IGoogleResponse>(
+      "https://www.googleapis.com/customsearch/v1?key=AIzaSyCDIY1m40pDSiuHen79vBpkSVjqBywMfso&cx=c6dbe55590d894a1c&num=10&searchType=image&q=" +
+        searchText
+    );
+    setImages(response.data.items);
+    console.log(images);
+  };
 
-//  const searchImages = async () => {
-//   const response = await axios.get(
-//     "https://www.googleapis.com/customsearch/v1?key=AIzaSyCDIY1m40pDSiuHen79vBpkSVjqBywMfso&cx=c6dbe55590d894a1c&num=10&searchType=image&q=smurfs");
-//     setImages(response.data.Search)
-//  }
-  
-  useEffect(() => {
-    const search = async () => {
-      const response = await fetch(
-        "https://www.googleapis.com/customsearch/v1?key=AIzaSyCDIY1m40pDSiuHen79vBpkSVjqBywMfso&cx=c6dbe55590d894a1c&num=10&searchType=image&q=smurfs"
-      );
-      const data = await response.json();
-      console.log(data);
-    };
-    search();
-  }, []);
+  // useEffect(() => {
+  //   const search = async () => {
+  //     const response = await fetch(
+  //       "https://www.googleapis.com/customsearch/v1?key=AIzaSyCDIY1m40pDSiuHen79vBpkSVjqBywMfso&cx=c6dbe55590d894a1c&num=10&searchType=image&q=smurfs"
+  //     );
+  //     const data = await response.json();
+  //     console.log(data);
+  //   };
+  //   search();
+  // }, []);
   return (
     <>
-      <ImageSearchForm />
+      <LogoutButton />
+      <ImageSearchForm search={searchImages} />
 
-      <section>Sökresultat</section>
+      <SearchResult images={images} />
     </>
   );
 };
