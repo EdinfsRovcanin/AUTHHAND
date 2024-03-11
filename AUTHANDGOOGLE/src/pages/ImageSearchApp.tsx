@@ -1,10 +1,10 @@
 import axios from "axios";
 import { ImageSearchForm } from "../components/ImageSerachForm";
-import { useEffect, useState } from "react";
 import { IGoogleResponse } from "../models/IGoogleResponse";
 import { IImage } from "../models/IImage";
 import { SearchResult } from "../components/SearchResults";
 import LogoutButton from "../components/LogoutButton";
+import FavoriteImageForm from "../FavoriteImageForm";
 
 export const ImageSearchApp = () => {
   const [images, setImages] = useState<IImage[]>();
@@ -33,6 +33,7 @@ export const ImageSearchApp = () => {
       <ImageSearchForm search={searchImages} />
 
       <SearchResult images={images} />
+      <FavoriteImageForm />
     </>
   );
 };
