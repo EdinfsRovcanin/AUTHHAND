@@ -16,7 +16,7 @@ export const ImageSearchForm = (props: IImageSearchFormProps) => {
 }
 
 return <form onSubmit={handleSubmit}>
-        <input
+        <input className="searchField"
           value={userSearchText} onChange={handleChange} />
         <button>Sök</button>
       </form>

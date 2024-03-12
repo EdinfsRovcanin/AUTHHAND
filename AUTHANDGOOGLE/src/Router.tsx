@@ -5,6 +5,7 @@ import { NotFound } from "./pages/NotFound";
 import { Home } from "./pages/Home";
 import { ImageDetails } from "./pages/ImageDetails";
 import ProtectedRoute from "./components/ProtectedRoute";
+import { FavoriteImages } from "./pages/FavoriteImages";
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +31,15 @@ export const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <ImageDetails />
+          </ProtectedRoute>
+        ),
+      },
+    
+      {
+        path: "/favoriter",
+        element: (
+          <ProtectedRoute>
+            <FavoriteImages />
           </ProtectedRoute>
         ),
       },
