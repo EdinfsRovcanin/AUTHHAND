@@ -40,6 +40,7 @@ export const SearchResult = ({ images }: ISearchResultProps) => {
   return (
     <section className="images">
       {images?.map((image) => (
+        
         <div
           key={image.link}
           className="imgage-wrapper"

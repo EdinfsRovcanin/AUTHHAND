@@ -1,8 +1,11 @@
 nav {
+    
+    background-color: rgb(161, 174, 179);
     ul {
         list-style: none;
         padding: 0;
         display: flex;
+        margin-right: 5;
         justify-content: flex-end;
         gap: 0.5rem;
 
@@ -11,11 +14,18 @@ nav {
                 border-bottom: 1px solid blue;
             }
         a {
-  color: blue; 
+  color: rgb(72, 76, 94); 
   text-decoration: none;
   padding: 10px;
   font-family: Arial, sans-serif;
 }
         }
     }
+
+}
+
+    .huvudBild img {
+  width: 20%;
+  height: auto; 
+  border-radius: 20px;
 }

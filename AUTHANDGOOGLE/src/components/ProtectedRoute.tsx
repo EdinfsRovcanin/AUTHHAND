@@ -9,7 +9,7 @@ const ProtectedRoute = ({ children }: ProtectedRouteProps): JSX.Element => {
   const { isAuthenticated, isLoading } = useAuth0();
 
   if (isLoading) {
-    return <div>Laddar...</div>; // Eller någon form av laddningsskärm/spinner
+    return <div>Laddar...</div>; 
   }
 
   return isAuthenticated ? children : <Navigate to="/" replace />;

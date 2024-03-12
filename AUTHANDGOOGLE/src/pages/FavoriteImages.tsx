@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 
 interface IImage {
-  url: string; // Ändrat från imageUrl till url för att matcha serverns svar
+  url: string; 
   title?: string;
 }
 
@@ -25,7 +25,7 @@ export const FavoriteImages = () => {
         }
         const data = await response.json();
 
-        // Anta att servern skickar en platt lista av bilder för den inloggade användaren
+        
         setFavoriteImages(data);
       } catch (error) {
         console.error("Error fetching favorite images:", error);
@@ -38,9 +38,9 @@ export const FavoriteImages = () => {
   return (
     <>
       <h2>Favoritbilder</h2>
-      <section className="images">
+      <section className="favoriteImages">
         {favoriteImages.map((image, index) => (
-          <div key={index} className="img-container">
+          <div key={index} className="favoriteImg-container">
             <img src={image.url} alt={image.title || "Favoritbild"} />
             <p>{image.title}</p>
           </div>

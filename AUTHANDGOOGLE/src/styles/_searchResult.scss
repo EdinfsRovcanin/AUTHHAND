@@ -1,8 +1,8 @@
 .images {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr)); /* Skapar en flexibel grid-layout */
-  gap: 20px; /* Ange önskat mellanrum mellan bilderna */
-  margin-bottom: 20px; /* Extra utrymme under bildgalleriet */
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr)); 
+  gap: 20px; 
+  margin-bottom: 20px; 
 }
 
 .img-container {
@@ -14,17 +14,23 @@
 }
 
 .img-container img {
-  width: 100%; /* Full bredd inom sin container */
-  max-height: 200px; /* Maximal höjd */
+  width: 100%; 
+  max-height: 200px; 
   object-fit: contain;
-  border-radius: 8px; /* Lägg till om du vill ha rundade hörn */
+ 
 }
 
-// .img-container:hover {
-//   background-color: rgb(221, 216, 216); /* Ljus bakgrundsfärg vid hovring */
-//   cursor: pointer;
-// }
+
 
 form {
   margin-bottom: 20px; /* Marginal under formuläret */
 }
+
+.stavning {
+              border: "none";
+              background-color: "transparent";
+              padding: 0;
+              color: "blue";
+              text-decoration: "underline";
+              cursor: pointer;
+            }
