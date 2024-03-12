@@ -1,0 +1,21 @@
+nav {
+    ul {
+        list-style: none;
+        padding: 0;
+        display: flex;
+        justify-content: flex-end;
+        gap: 0.5rem;
+
+        li {
+            .active {
+                border-bottom: 1px solid blue;
+            }
+        a {
+  color: blue; 
+  text-decoration: none;
+  padding: 10px;
+  font-family: Arial, sans-serif;
+}
+        }
+    }
+}

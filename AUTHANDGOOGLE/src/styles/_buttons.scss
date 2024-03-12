@@ -1,0 +1,29 @@
+button {
+  background-color: #007bff; /* Primärfärg */
+  border: none;
+  border-radius: 4px; /* Ger knappen rundade hörn */
+  color: white; /* Textfärg */
+  padding: 3px 15px; /* Minskar den vertikala paddingen för att göra knappen mindre hög */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px; /* Textstorlek */
+  cursor: pointer; /* Ändrar muspekaren till en handikonsymbol */
+  outline: none; /* Tar bort fokusramen */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Lägger till en lätt skugga för djup */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Lägger till mjuka övergångar */
+}
+
+button:hover {
+  background-color: #0056b3; /* Mörkare nyans för hover-effekt */
+  transform: scale(1.05); /* Lätt förstorings-effekt vid hover */
+}
+
+button:active {
+  background-color: #004094; /* Ännu mörkare nyans vid klick */
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2); /* Inre skugga för att simulera intryckt knapp */
+  transform: scale(0.98); /* Lätt minskning i storlek vid klick för att simulera intryckning */
+}
+
+/* Lägger till en lätt animering för fokus tillstånd för bättre tillgänglighet */
+button:focus {
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+}

@@ -1,24 +1,30 @@
-#images {
-  display: flex;
-  flex-wrap: wrap;
-
-  div {
-    width: 30%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 2rem;
-
-    .img-container {
-        width: 50%;
-
-        img {
-            width: 100%;
-        }
-    }
-&:hover {
-    background-color: rgb(221, 216, 216);
-    cursor: pointer;
+.images {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr)); /* Skapar en flexibel grid-layout */
+  gap: 20px; /* Ange önskat mellanrum mellan bilderna */
+  margin-bottom: 20px; /* Extra utrymme under bildgalleriet */
 }
-  }
+
+.img-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.img-container img {
+  width: 100%; /* Full bredd inom sin container */
+  max-height: 200px; /* Maximal höjd */
+  object-fit: contain;
+  border-radius: 8px; /* Lägg till om du vill ha rundade hörn */
+}
+
+// .img-container:hover {
+//   background-color: rgb(221, 216, 216); /* Ljus bakgrundsfärg vid hovring */
+//   cursor: pointer;
+// }
+
+form {
+  margin-bottom: 20px; /* Marginal under formuläret */
 }

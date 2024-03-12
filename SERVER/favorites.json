@@ -1,8 +1,21 @@
 [
   {
-    "imageUrl": "https://images.app.goo.gl/HeFd4jzwtG3GA5eJ9"
+    "user": "google-oauth2|111116302156063588122",
+    "favoriteImages": [
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/en/thumb/e/ed/FK_Partizan.svg/1200px-FK_Partizan.svg.png"
+      }
+    ]
   },
   {
-    "imageUrl": "fdafafafa"
+    "user": "github|144779241",
+    "favoriteImages": [
+      {
+        "url": "https://m.basketnews.com/image-392523-crop700x700.jpg"
+      },
+      {
+        "url": "https://m.basketnews.com/image-351100-crop700x700.jpg"
+      }
+    ]
   }
 ]

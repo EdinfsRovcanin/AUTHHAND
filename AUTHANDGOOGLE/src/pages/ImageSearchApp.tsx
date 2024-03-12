@@ -5,6 +5,7 @@ import { IImage } from "../models/IImage";
 import { SearchResult } from "../components/SearchResults";
 import LogoutButton from "../components/LogoutButton";
 import FavoriteImageForm from "../FavoriteImageForm";
+import { useState } from "react";
 
 export const ImageSearchApp = () => {
   const [images, setImages] = useState<IImage[]>();
@@ -29,11 +30,11 @@ export const ImageSearchApp = () => {
   // }, []);
   return (
     <>
-      <LogoutButton />
+      
       <ImageSearchForm search={searchImages} />
 
       <SearchResult images={images} />
-      <FavoriteImageForm />
+     
     </>
   );
 };
