@@ -10,7 +10,7 @@ app.use(cors());
 
 const FILE_PATH = "favorites.json";
 
-// Joi valideringsschema för POST /add-favorite endpoint
+// Joi valideringsschema för POST /add-favorite endpoint.
 const addFavoriteSchema = Joi.object({
   user: Joi.string().required(),
   imageUrl: Joi.string().uri().required(),
