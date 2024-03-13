@@ -1,16 +1,18 @@
 import axios from "axios";
-import { ImageSearchForm } from "../components/ImageSerachForm";
 import { IGoogleResponse } from "../models/IGoogleResponse";
 import { IImage } from "../models/IImage";
 import { SearchResult } from "../components/SearchResults";
 import { useState } from "react";
+import { ImageSearchForm } from "../components/ImageSerachForm";
 
 export const ImageSearchApp = () => {
+  const [userSearchText, setUserSearchText] = useState("");
   const [images, setImages] = useState<IImage[]>();
   const [searchTime, setSearchTime] = useState<number | null>(null);
   const [correctedQuery, setCorrectedQuery] = useState<string | null>(null);
 
   const searchImages = async (searchText: string) => {
+    setUserSearchText(searchText);
     const response = await axios.get<IGoogleResponse>(
       "https://www.googleapis.com/customsearch/v1?key=AIzaSyCDIY1m40pDSiuHen79vBpkSVjqBywMfso&cx=c6dbe55590d894a1c&num=10&searchType=image&q=" +
         searchText
@@ -21,26 +23,24 @@ export const ImageSearchApp = () => {
     setCorrectedQuery(response.data.spelling?.correctedQuery || null);
     console.log(images);
   };
-const handleSuggestedSearch = () => {
-  if (correctedQuery) {
-    searchImages(correctedQuery); // Sök igen med det föreslagna korrekta sökordet
-  }
-};
+const handleSuggestedSearch = correctedQuery
+  ? () => searchImages(correctedQuery)
+  : () => {};
+
 
   return (
     <>
-    <p></p>
-      <ImageSearchForm search={searchImages} />
+      <ImageSearchForm onSearch={searchImages} searchText={userSearchText} />
       {searchTime && <p>Sökningen tog: {searchTime} sekunder</p>}
       {correctedQuery && (
         <p>
           Menade du:{" "}
-          <button className="stavning"
-          
+          <span
             onClick={handleSuggestedSearch}
+            style={{ textDecoration: "underline", cursor: "pointer" }}
           >
             {correctedQuery}
-          </button>
+          </span>
           ?
         </p>
       )}
