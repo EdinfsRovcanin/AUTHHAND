@@ -1,24 +1,36 @@
-import { useState, ChangeEvent, FormEvent } from "react";
+import { useState, useEffect, ChangeEvent, FormEvent } from "react";
 
 interface IImageSearchFormProps {
-  search: (text: string) => void
+  onSearch: (text: string) => void;
+  searchText: string;
 }
-export const ImageSearchForm = (props: IImageSearchFormProps) => {
-    const [userSearchText, setUserSearchText] = useState("");
+export const ImageSearchForm = ({
+  onSearch,
+  searchText,
+}: IImageSearchFormProps) => {
+  const [userSearchText, setUserSearchText] = useState(searchText);
+
+useEffect(() => {
+  setUserSearchText(searchText);
+}, [searchText]);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-            setUserSearchText(e.target.value)
-  }
+    setUserSearchText(e.target.value);
+  };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
-    props.search(userSearchText)
-}
+    onSearch(userSearchText);
+  };
 
-return <form onSubmit={handleSubmit}>
-        <input className="searchField"
-          value={userSearchText} onChange={handleChange} />
-        <button>Sök</button>
-      </form>
-
-}
+  return (
+    <form onSubmit={handleSubmit}>
+      <input
+        className="searchField"
+        value={userSearchText}
+        onChange={handleChange}
+      />
+      <button type="submit">Sök</button>
+    </form>
+  );
+};
