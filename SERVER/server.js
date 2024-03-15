@@ -1,7 +1,9 @@
 const express = require("express");
 const fs = require("fs");
 const cors = require("cors");
-const Joi = require("joi"); 
+const {addFavoriteSchema} = require("./schemas/addFavoritesSchema")
+const {userSchema} = require("./schemas/userSchema")
+ 
 
 const app = express();
 
@@ -10,22 +12,18 @@ app.use(cors());
 
 const FILE_PATH = "favorites.json";
 
-// Joi valideringsschema för POST /add-favorite endpoint.
-const addFavoriteSchema = Joi.object({
-  user: Joi.string().required(),
-  imageUrl: Joi.string().uri().required(),
-});
+
+
 
 app.post("/add-favorite", (req, res) => {
-  // Validering av inkommande data med Joi
-  const { error, value } = addFavoriteSchema.validate(req.body); // Tillagt för validering
+  
+  const { error, value } = addFavoriteSchema.validate(req.body); 
   if (error) {
-    return res.status(400).send(error.details[0].message); // Felhantering tillagd
+    return res.status(400).json(error.details[0].message); ''
   }
 
-  // Använd validerat värde
-  const { user: userId, imageUrl } = value; // Ändrat från req.body till value
-
+  
+  const { user: userId, imageUrl } = value; 
   fs.readFile(FILE_PATH, (err, data) => {
     let favorites = [];
     if (!err && data.length) {
@@ -56,19 +54,16 @@ app.post("/add-favorite", (req, res) => {
   });
 });
 
-// Joi valideringsschema för GET /favorites endpoint
-const userSchema = Joi.object({
-  userId: Joi.string().required(),
-});
+
 
 app.get("/favorites", (req, res) => {
-  // Validering av query-parametrar med Joi
-  const { error, value } = userSchema.validate({ userId: req.query.userId }); // Tillagt för validering
+  
+  const { error, value } = userSchema.validate({ userId: req.query.userId }); 
   if (error) {
-    return res.status(400).send(error.details[0].message); // Felhantering tillagd
+    return res.status(400).send(error.details[0].message); 
   }
 
-  const userId = value.userId; // Ändrat från req.query.userId till value.userId
+  const userId = value.userId; 
 
   fs.readFile(FILE_PATH, (err, data) => {
     if (err) {
