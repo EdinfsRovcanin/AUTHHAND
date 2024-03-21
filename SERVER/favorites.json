@@ -3,9 +3,6 @@
     "user": "google-oauth2|111116302156063588122",
     "favoriteImages": [
       {
-        "url": "https://upload.wikimedia.org/wikipedia/en/thumb/e/ed/FK_Partizan.svg/1200px-FK_Partizan.svg.png"
-      },
-      {
         "url": "https://digital.ihg.com/is/image/ihg/voco-dubai-8588673108-16x9"
       },
       {
@@ -19,6 +16,15 @@
       },
       {
         "url": "https://cdn.britannica.com/61/93061-050-99147DCE/Statue-of-Liberty-Island-New-York-Bay.jpg"
+      },
+      {
+        "url": "https://lp-cms-production.imgix.net/2021-06/GettyRF_543346423.jpg?auto=format&w=1920&h=640&fit=crop&crop=faces,edges&q=75"
+      },
+      {
+        "url": "https://cdn.britannica.com/69/156369-050-75E7FD08/skyline-Dubai-United-Arab-Emirates.jpg"
+      },
+      {
+        "url": "https://media.tacdn.com/media/attractions-content--1x-1/10/62/ea/16.jpg"
       }
     ]
   },
@@ -27,9 +33,6 @@
     "favoriteImages": [
       {
         "url": "https://m.basketnews.com/image-392523-crop700x700.jpg"
-      },
-      {
-        "url": "https://m.basketnews.com/image-351100-crop700x700.jpg"
       },
       {
         "url": "https://cdn.britannica.com/15/189715-050-4310222B/Dubai-United-Arab-Emirates-Burj-Khalifa-top.jpg"
@@ -51,6 +54,9 @@
       },
       {
         "url": "https://files.worldwildlife.org/wwfcmsprod/images/African_Elephant_Kenya_112367/hero_small/3v49raxlb8_WW187785.jpg"
+      },
+      {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg/640px-View_of_Empire_State_Building_from_Rockefeller_Center_New_York_City_dllu_%28cropped%29.jpg"
       }
     ]
   }

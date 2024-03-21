@@ -9,7 +9,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Auth0Provider
       domain="dev-zg65gkp5arwj6t0z.eu.auth0.com"
-      clientId="2mBqqCMmZdLpTMBGCHs0wkI4jVGCU20z"
+      clientId={import.meta.env.VITE_AUTH0_CLIENT_ID}
       authorizationParams={{
         redirect_uri: `${window.location.origin}/images`,
       }}

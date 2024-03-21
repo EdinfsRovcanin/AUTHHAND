@@ -14,7 +14,7 @@ export const ImageSearchApp = () => {
   const searchImages = async (searchText: string) => {
     setUserSearchText(searchText);
     const response = await axios.get<IGoogleResponse>(
-      "https://www.googleapis.com/customsearch/v1?key=AIzaSyCDIY1m40pDSiuHen79vBpkSVjqBywMfso&cx=c6dbe55590d894a1c&num=10&searchType=image&q=" +
+      `https://www.googleapis.com/customsearch/v1?key=${import.meta.env.VITE_GOOGLE_API_KEY}&cx=c6dbe55590d894a1c&num=10&searchType=image&q=` +
         searchText
     );
     console.log(response)
