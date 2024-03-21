@@ -5,7 +5,7 @@ function addUser(newUser, callback) {
   fs.readFile(FILE_PATH, (err, data) => {
     if (err) {
       console.log("Error reading file, creating a new one...");
-      data = "[]"; // Skapar en ny lista om filen inte finns eller inte kan läsas
+      data = "[]"; 
     }
 
     const users = JSON.parse(data);

@@ -72,7 +72,7 @@ app.get("/favorites", (req, res) => {
     }
 
     const favorites = JSON.parse(data);
-    // Filtrera favoriter baserat på userId
+    
     const userFavorites = favorites
       .filter((fav) => fav.user === userId)
       .map((fav) => fav.favoriteImages)
